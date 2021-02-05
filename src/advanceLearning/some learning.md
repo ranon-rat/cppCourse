@@ -100,3 +100,126 @@ And this part of the code `printf("%s\n",14>1 ? "hello":"world");` its another f
 
 
 [source](https://www.tutorialspoint.com/cprogramming/c_data_types.htm)
+
+# floating types
+
+
+| Type Name	| 32–bit Size	|64–bit Size|
+|--|--|--|
+| float	 |4 bytes	        |4 bytes|
+| double |	8 bytes	        |8 bytes|
+| long double |	16 bytes	|16 bytes|
+
+[source](https://docs.oracle.com/cd/E19253-01/817-6223/chp-typeopexpr-2/index.html)
+
+# static
+
+in c++ we use `static` for dont change the address of a memory how in this example
+```c++
+#include <iostream>
+using namespace std;
+
+int func(){
+    static int i =0;
+    return ++i ;
+
+}
+int main(){
+    cout<<func() <<endl;
+    cout<<func() <<endl;
+    cout<<func() <<endl;
+    cout<<func() <<endl;
+    cout<<func() <<endl;
+}
+```
+
+so the value every time we change the value, in the other variables that use it again the value will change( sorry for not communicating very well)
+
+
+# structured data
+
+If you programm with javascript,golang or python maybe you can see some 
+similarities.First we need to define the structure
+```c++
+#include <iostream>
+using namespace std;
+struct helloworld{
+    char hello[];
+    char world[];
+};
+int main(){
+    helloworld h ={"hello","world"}
+    cout<<h.hello<<h.world<<endl;
+    return 0;    
+}
+```
+its base on position of the value
+
+# bit fields
+
+bit fields its more for structured data and for that kind of things
+
+```c++
+#include <iostream>
+using namespace std;
+struct day{
+    bool good_day:1;
+    int food:2;
+};
+int main(){
+    day h;
+    cout<<h.food<<h.good_day<<endl;
+    return 0;    
+}
+```
+
+# unions
+
+The unions is for have a data structure who they gona have the same memory size
+```c++
+#include <iostream>
+using namespace std;
+union day{
+    bool good_day;
+    int food;
+};
+int main(){
+    day h;
+    h.good_day=true;
+    h.food=14;
+    cout<<h.food<<h.good_day<<endl;
+    return 0;    
+}
+```
+# typedef
+
+It's a way to give a type a aleas
+```c++
+#include <iostream>
+using namespace std;
+typedef string word;
+int main(){
+    word hello="hello world";
+    cout<<hello<<endl;
+    return 0;    
+}
+```
+
+# auto type
+
+its for define a type of variable automatically
+```c++
+#include <iostream>
+using namespace std;
+int func(){
+    return 14;
+}
+int main(){
+    auto x = func();
+    cout<<x<<endl;
+    return 0;    
+}
+```
+
+asd
+this is a change
